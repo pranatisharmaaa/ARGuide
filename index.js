@@ -15,14 +15,14 @@ const httpServer = createServer(app);
 const db = initDatabase();
 
 // Connect to existing Edge Server as a client
-const edgeSocket = SocketClient(process.env.EDGE_SERVER_URL, {
+const edgeSocket = SocketClient(import.meta.env.VITE_BACKEND_URL, {
   reconnection: true,
   reconnectionAttempts: 10,
   reconnectionDelay: 2000
 });
 
 edgeSocket.on('connect', () => {
-  console.log('[AI-CoPilot] Connected to Edge Server at', process.env.EDGE_SERVER_URL);
+  console.log('[AI-CoPilot] Connected to Edge Server at', import.meta.env.VITE_BACKEND_URL);
   edgeSocket.emit('register_ai_service', { service: 'ai-copilot', version: '1.0.0' });
 });
 
