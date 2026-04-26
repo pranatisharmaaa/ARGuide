@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 
 const SESSION_ID = 'HAL-123';
-const SERVER_URL = 'http://localhost:3000';
+const SERVER_URL = 'https://arguide.onrender.com';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('live');

@@ -260,7 +260,7 @@ export default function App() {
       window.addEventListener('resize', handleResize);
       handleResize();
 
-       const socket = io('http://localhost:3000');
+       const socket = io('https://arguide.onrender.com');
        socketRef.current = socket;
        setSocket(socket);
        

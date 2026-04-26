@@ -45,7 +45,7 @@ export default function AICopilotPanel({ socket, sessionId }) {
 
   const acknowledgeAlert = (alertId) => {
     setAlerts(prev => prev.map(a => a.id === alertId ? { ...a, acknowledged: true } : a));
-    fetch(`http://localhost:3001/sessions/${sessionId}/alerts/${alertId}/acknowledge`, { method: 'POST' });
+    fetch(`https://arguide.onrender.com/sessions/${sessionId}/alerts/${alertId}/acknowledge`, { method: 'POST' });
   };
 
   const requestSignOff = () => {
